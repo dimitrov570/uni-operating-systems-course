@@ -26,4 +26,4 @@ for i in $(seq 0 $((${brackets_size}-1))); do
 	fi
 done
 
-echo "${maxNest}"
+echo "The deepest nesting is ${maxNest} levels";
