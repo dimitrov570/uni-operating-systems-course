@@ -28,3 +28,8 @@ fi
 
 find "${1}" -type f -mmin -45 2> /dev/null -exec cp {} "${outDir}/" ';';
 
+read -p "Do you want to archive directory? [y/n]" ans
+if [[ ${ans} == "y" ]]; then
+	tar -cvf "${outDir}.tar" "${outDir}";
+fi
+
