@@ -10,7 +10,7 @@ if [[ ! -f "${1}" || ! -r "${1}" ]]; then
 		exit 2;
 fi
 
-username=$(grep -E "${2}" "${1}" | cut -d ' ' -f2)
+username=$(grep -E "${2}" "${1}" | cut -d ' ' -f 2-)
 
 if [[ -z "${username}" ]]; then
 		echo "User doesn't exist";
