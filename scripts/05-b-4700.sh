@@ -19,7 +19,7 @@ if [ $# -eq 2 ]; then
 		fi
 fi
 
-NUMBER=${1}
+NUMBER=$(echo "${1}" | sed -e "s/^[0]*//");
 numberLength=${#NUMBER}
 offset=0;
 length=3;
