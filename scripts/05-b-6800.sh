@@ -24,7 +24,7 @@ if [ "${2}" = "-a" ]; then
 				fileSize=$(stat "${name}" -c "%s");
 				echo "${name} (${fileSize} bytes)";
 			fi
-	done < <(find "${1}" -mindepth 1) 
+	done < <(find "${1}" -mindepth 1 2> /dev/null) 
 else
 	while read name; do
 			if [ -d "${name}" -a -r "${name}" -a -x "${name}" ]; then
@@ -34,8 +34,5 @@ else
 				fileSize=$(stat "${name}" -c "%s");
 				echo "${name} (${fileSize} bytes)";
 			fi
-	done < <(find "${1}" -mindepth 1 -not -regex '.*/\..*') 
+	done < <(find "${1}" -mindepth 1 -not -regex '.*/\..*' 2> /dev/null) 
 fi
-
-#find "${1}" -type d ${regexOption}
-
