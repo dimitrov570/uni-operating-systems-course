@@ -16,5 +16,5 @@ extensions=$(find "${1}" -type f -name "*.*" -printf "%f\n" 2> /dev/null  | sed 
 
 while read ext; do
 	mkdir -p "${2}/${ext}";
-	find "${1}" -name "*.${ext}" -print0 | xargs -0 mv -t "${2}/${ext}"
+	find "${1}" -name "*.${ext}" -print0 2> /dev/null | xargs -0 mv -t "${2}/${ext}"
 done < <(echo "$extensions")
