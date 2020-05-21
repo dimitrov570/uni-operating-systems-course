@@ -23,3 +23,4 @@ if [ $# -eq 2 ]; then
 else
 	echo "${1}";
 fi
+echo -en "\033[0m"
