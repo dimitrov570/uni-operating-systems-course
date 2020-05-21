@@ -23,6 +23,3 @@ if [ $# -eq 2 ]; then
 else
 	echo "${1}";
 fi
-
-
-
