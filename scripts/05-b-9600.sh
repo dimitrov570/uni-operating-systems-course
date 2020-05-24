@@ -32,6 +32,8 @@ while [ -n "${1}" ]; do
 				gzip -c "${1}" > "${backupDir}/${1}_${curDate}.gz"
 				rm "${1}";
 				echo "[$(date +"%F %H:%M:%S")] Removed file ${1}"; 
+		else
+				echo "${1} doesn't exist!" >&2;
 		fi
 		shift
 done
