@@ -2,6 +2,6 @@
 Tasks solutions from OS course.
 
 # TODO
-### Add shell scripts tasks
+### Add processes tasks
 ### Add C tasks
 
