@@ -15,7 +15,7 @@ fi
 
 while [ -n "${1}" ]; do
 		if [ -d "${1}" ]; then
-				if [ -z $(ls -A "${1}") ]; then
+				if [ $(ls -A "${1}" | wc -l) -eq 0 ]; then
 						rmdir "${1}";
 						echo "[$(date +"%F %H:%M:%S")] Removed directory ${1}" >> "${logFile}"; 
 				elif [ "${recursive}" -eq 1 ]; then
