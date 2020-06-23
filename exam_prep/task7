@@ -1,0 +1,1 @@
+cat task7.txt | grep "/home/Inf/" | egrep "([^:]*:){4}(.*a)[,:].*" | cut -c 3,4 | sort | uniq -c | tail -1
