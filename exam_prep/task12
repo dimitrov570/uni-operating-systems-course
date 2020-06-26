@@ -1,0 +1,1 @@
+find ~ -inum $(find ~ -type f -printf "%T@ %i\n" | sort -n | cut -d ' ' -f 2 | head -n 1) -printf "%d %p\n" | sort -n | head -n 1 | cut -d ' ' -f 2 
