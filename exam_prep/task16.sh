@@ -11,10 +11,9 @@ k2="${3}"
 line1=$(grep "^${k1}=" "${file}")
 line2=$(grep "^${k2}=" "${file}")
 
-val1=$(echo "${line1}" | cut -d '=' -f 2- | tr ' ' '\n' | sort | tr '\n' ' ')
-val2=$(echo "${line2}" | cut -d '=' -f 2- | tr ' ' '\n' | sort | tr '\n' ' ')
+val1=$(echo "${line1}" | cut -d '=' -f 2- | tr ' ' '\n' | sort)
+val2=$(echo "${line2}" | cut -d '=' -f 2- | tr ' ' '\n' | sort)
 
-newVal2=$(comm)
+newVal=$(comm <(echo -e "${val1}") <(echo -e "${val2}") -13 | tr '\n' ' ')
 
-echo ${val1}
-echo ${val2}
+cat "${1}" | sed -E "s/^(${k2}=).*/\1$newVal/"
