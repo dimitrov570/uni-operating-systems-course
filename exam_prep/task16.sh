@@ -11,6 +11,10 @@ k2="${3}"
 line1=$(grep "^${k1}=" "${file}")
 line2=$(grep "^${k2}=" "${file}")
 
+if [ ${#line2} -eq 0 ]; then
+		exit 3;
+fi
+
 val1=$(echo "${line1}" | cut -d '=' -f 2- | tr ' ' '\n' | sort)
 val2=$(echo "${line2}" | cut -d '=' -f 2- | tr ' ' '\n' | sort)
 
