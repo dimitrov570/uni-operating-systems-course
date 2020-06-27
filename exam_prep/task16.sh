@@ -16,4 +16,4 @@ val2=$(echo "${line2}" | cut -d '=' -f 2- | tr ' ' '\n' | sort)
 
 newVal=$(comm <(echo -e "${val1}") <(echo -e "${val2}") -13 | tr '\n' ' ')
 
-cat "${1}" | sed -E "s/^(${k2}=).*/\1$newVal/"
+sed -i -E "s/^(${k2}=).*/\1$newVal/" "${1}"
