@@ -1,0 +1,12 @@
+34
+35 (patch) 37
+36 cat
+38 tr
+39 (sort with limits), 41
+40 (cut) !
+43 (cat | sort)
+44 (prompt)
+45 (cut -d ':' -f 7 /etc/passwd | sort | uniq -c | sort -n)
+46 !
+47 (find argv[1] -type f -printf "T@ %p\n" | sort -n | tail -n 1| cut -d ' ' -f 2)
+48 !
